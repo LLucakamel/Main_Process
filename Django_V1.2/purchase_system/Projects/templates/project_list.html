@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Projects</h1>
+<ul>
+    {% for project in projects %}
+    <li>{{ project.name }} - {{ project.code }} ({{ project.location }}) - Consultant: {{ project.consultant }} - Stage: {{ project.stage }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add-project' %}" class="btn btn-primary">Add New Project</a>
+
+{% endblock %}
